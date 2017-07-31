@@ -16,6 +16,7 @@ public class XSSStripperTest extends TestCase {
 
     String[] vector = null;
     String[] valid = null;
+    XSSStripper stripper = null;
 
     @Override
     protected void setUp() throws Exception {
@@ -46,15 +47,25 @@ public class XSSStripperTest extends TestCase {
         }
         valid = l.toArray(new String[l.size()]);
         reader.close();
+
+
+        /*
+         * This is how you setup your filter.
+         */
         XSSFilter filter = new XSSFilter();
         filter.init(null);
+
+        /*
+         * This is how you get your stripper out of the filter.
+         */
+        stripper = filter.getStripper();
     }
 
     public void testStrip() throws Exception {
 
         for(String s : vector) {
             System.out.println(s);
-            String strip = XSSStripper.stripXSS(s);
+            String strip = stripper.stripXSS(s);
             assertFalse(s.equals(strip));
             System.out.println("["+strip+"]\n\n");
         }
@@ -66,7 +77,7 @@ public class XSSStripperTest extends TestCase {
         for(String s : valid) {
             String ss = ESAPI.encoder().canonicalize(s);
             System.out.println(s);
-            String strip = XSSStripper.stripXSS(s);
+            String strip = stripper.stripXSS(s);
             System.out.println("["+strip+"]\n\n");
             assertTrue(ss.equals(strip));
         }

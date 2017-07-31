@@ -72,4 +72,8 @@ public class XSSFilter implements Filter {
             throws IOException, ServletException {
         chain.doFilter(new XSSRequestWrapper((HttpServletRequest) request, stripper), response);
     }
+
+    public XSSStripper getStripper() {
+        return stripper;
+    }
 }
