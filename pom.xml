@@ -2,13 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.anssler</groupId>
-    <artifactId>xssfilter</artifactId>
+    <groupId>org.xssfoe</groupId>
+    <artifactId>xssfoe</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>xssfilter</name>
-    <url>http://maven.apache.org</url>
+    <name>xssfoe</name>
+    <url>https://github.com/newm4n/xssfoe</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
