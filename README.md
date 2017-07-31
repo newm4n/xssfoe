@@ -49,6 +49,37 @@ You can use the servlet filter in your web.xml, add the following snippet into y
 </filter-mapping>
 ```
 
+## How To Compile, Package and Test
+
+Well, as for now, July 31st 2017, I have not submit any release to Maven Central yet. Will do in a couple of days. So, you need to get it straight from github. Its easy !!!
+
+### Compile, Package and Install.
+
+* First you clone from GitHub.
+* Second, go to the cloned directory in your computer and ...
+* Execute "mvn clean install"
+
+Thats it !! It will compile, test and install the library into your local maven repository, Then you can add this maven dependency in your web app project.
+
+```xml
+<dependency>
+	<groupId>org.xssfoe</groupId>
+    <artifactId>xssfoe</artifactId>
+    <version>1.1</version>
+</dependency>
+```
+
+### Test
+
+This instruction bellow,
+
+```
+mvn test
+```
+
+Will test the library against all the attack vectors in [this file](https://github.com/newm4n/xssfoe/blob/develop/src/test/resources/xssvector.txt). Yes, there's alot of vector already there. Feel free to add more line(s) into the file if you have a suspected XSS vector, run the mvn command again. See if XSSFoe can deal with it.
+
+
 ## Want to contribute ?
 
 YES, we need contributor !! For ye who are willing ! in the name of open-source. Join us in our holy war against XSS attacks ! We need your feedback, your input, and your code !! We also accept money, LOL, who doesn't ?! =)
